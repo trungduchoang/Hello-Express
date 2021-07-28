@@ -5,8 +5,5 @@
     "icon": "https://static.bit.dev/bit-logo.svg",
     "defaultDirectory": "{scope}/{name}",
     "defaultScope": "rteam.shared"
-  },
-  "teambit.dependencies/dependency-resolver": {
-    "packageManager": "teambit.dependencies/pnpm"
   }
 }

@@ -3,7 +3,7 @@
 {
     "api-types": {
         "scope": "rteam.shared",
-        "version": "0.0.4",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "shared/api-types"
     },

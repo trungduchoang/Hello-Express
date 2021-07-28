@@ -1,3 +1,3 @@
 export type TExample = {
-  text: string;
+  text: string | null;
 };
