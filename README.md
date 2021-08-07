@@ -41,6 +41,16 @@
 - **Linting**: with [ESLint](https://eslint.org) and [Prettier](https://prettier.io)
 - **Editor config**: consistent editor configuration using [EditorConfig](https://editorconfig.org)
 
+## Quick Start
+
+```bash
+yarn install
+yarn global add bit
+bit login (Register using Organization Github account)
+yarn bit:import
+yarn docker:dev
+```
+
 ## Commands
 
 Testing:
@@ -70,7 +80,7 @@ yarn bit:import
 bit tag -a -m "Commit message"
 
 # Push changes to remote
-
+bit export
 ```
 
 Linting:
