@@ -48,6 +48,7 @@ yarn install
 yarn global add bit
 bit login (Register using Organization Github account)
 yarn bit:import
+Copy .env.example to .env
 yarn docker:dev
 ```
 
