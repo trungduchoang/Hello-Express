@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 import { Server } from "http";
 // others
 import app from "./app";
-import config from "./config/config";
-import logger from "./config/logger";
+import config from "./config";
+import logger from "./config/logger/winston";
 
 let server: Server;
 mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => {
@@ -26,8 +26,8 @@ const exitHandler = () => {
   }
 };
 
-const unexpectedErrorHandler = (error: Error) => {
-  logger.error(error);
+const unexpectedErrorHandler = (error: Error | null | {} | undefined) => {
+  if (error) logger.error(error);
   exitHandler();
 };
 

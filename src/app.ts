@@ -1,18 +1,22 @@
+// libs
 import express from "express";
 import helmet from "helmet";
-import xss from "xss-clean";
 import mongoSanitize from "express-mongo-sanitize";
 import compression from "compression";
 import cors from "cors";
 import passport from "passport";
 import httpStatus from "http-status";
-import config from "./config/config";
-import morgan from "./config/morgan";
-import { jwtStrategy } from "./config/passport";
-import { authLimiter } from "./middlewares/rateLimiter";
-import routes from "./routes/v1";
-import { errorConverter, errorHandler } from "./middlewares/error";
-import ApiError from "./utils/ApiError";
+// configs
+import config from "@/config";
+import * as morgan from "@/config/logger/morgan";
+import jwtStrategy from "@/config/authentication/passport";
+// middlewares
+import authLimiter from "@/middlewares/auth/limiter";
+import errorHandler from "@/middlewares/errorHandler";
+// routes
+import routes from "@/routes/v1";
+// others
+import { errorConverter, ApiError } from "@/utils";
 
 const app = express();
 
@@ -31,7 +35,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // sanitize request data
-app.use(xss());
+// TODO: Use "import xss from "xss-clean";" here
+// app.use(xss());
 app.use(mongoSanitize());
 
 // gzip compression
