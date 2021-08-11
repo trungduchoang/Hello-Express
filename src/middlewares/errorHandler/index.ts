@@ -15,7 +15,7 @@ const errorHandler: ErrorRequestHandler = (err: ApiError, _req: Request, res: Re
   if (config.env === "production" && !err.isOperational) {
     statusCode = httpStatus.INTERNAL_SERVER_ERROR;
     // TODO:
-    message = String(httpStatus[httpStatus.INTERNAL_SERVER_ERROR]);
+    message = String((httpStatus as any)[httpStatus.INTERNAL_SERVER_ERROR]);
   }
 
   res.locals.errorMessage = err.message;
