@@ -45,11 +45,11 @@
 
 ```bash
 yarn install
+yarn docker:dev // Install Docker: https://docs.docker.com/get-docker/
+// For Using Bit
 yarn global add bit
 bit login (Register using Organization Github account)
 yarn bit:import
-Copy .env.example to .env
-yarn docker:dev // Install Docker: https://docs.docker.com/get-docker/
 ```
 
 ## Commands
