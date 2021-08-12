@@ -1,1 +1,0 @@
-    "build": "cross-env NODE_ENV=production tsc -b || babel build -d build",

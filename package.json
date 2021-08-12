@@ -4,7 +4,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/index.js",
     "start:pm2": "pm2 start ecosystem.config.json --no-daemon",
-    "build": "cross-env NODE_ENV=production tsc -b || babel build -d build",
+    "build": "cross-env NODE_ENV=production tsc -b && babel build -d build",
     "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
     "bit:import": "bit import --skip-npm-install --ignore-package-json -m manual",
     "bit:clone": "rm -rf shared && bit import --skip-npm-install --ignore-package-json  rteam.shared/*",
