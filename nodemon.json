@@ -1,7 +1,7 @@
 {
   "verbose": true,
   "ignore": [],
-  "watch": ["src"],
+  "watch": ["src", "shared"],
   "execMap": {
     "ts": "node --inspect=0.0.0.0:9229 --nolazy -r ts-node/register"
   },

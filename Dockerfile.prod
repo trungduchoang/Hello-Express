@@ -1,0 +1,13 @@
+FROM node:14.17.4-alpine
+
+RUN mkdir -p /usr/src/rx-backend-prod && chown -R node:node /usr/src/rx-backend-prod
+
+WORKDIR /usr/src/rx-backend-prod
+
+COPY package.json yarn.lock ./
+
+USER node
+
+RUN yarn install --production --pure-lockfile
+
+COPY --chown=node:node ./build .

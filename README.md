@@ -1,4 +1,4 @@
-# Init Express app
+# Rx API
 
 ## Table of Contents
 
@@ -46,10 +46,11 @@
 ```bash
 yarn install
 yarn docker:dev // Install Docker: https://docs.docker.com/get-docker/
-// For Using Bit
-yarn global add bit
+
+// Using bit:
+Install Bit & BVM: https://harmony-docs.bit.dev/reference/using-bvm/#install-bvm
 bit login (Register using Organization Github account)
-yarn bit:import
+yarn bit:clone
 ```
 
 ## Commands
@@ -71,8 +72,10 @@ Bit:
 
 ```bash
 # Install global and login for using Bit
-yarn global add bit
 bit login (Register using Organization Github account)
+
+# Clone Collection
+yarn bit:clone
 
 # Pull latest Bit components
 yarn bit:import

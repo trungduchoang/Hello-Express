@@ -1,6 +1,22 @@
-version: '3'
+version: "3"
 
 services:
-  node-app:
-    container_name: node-app-dev
+  rx-backend-dev-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: rx-backend-dev
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
+    container_name: rx-backend-dev-container
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/usr/src/rx-backend-dev
+      - /usr/src/rx-backend-dev/node_modules
+    networks:
+      - node-network
     command: yarn dev -L
+    env_file: ./.env.example

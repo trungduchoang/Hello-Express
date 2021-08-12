@@ -1,6 +1,22 @@
-version: '3'
+version: "3"
 
 services:
-  node-app:
-    container_name: node-app-prod
+  rx-backend-prod-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: rx-backend-prod
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
+    container_name: rx-backend-prod-container
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    volumes:
+      - ./build:/usr/src/rx-backend-prod
+      - /usr/src/rx-backend-prod/node_modules
+    networks:
+      - node-network
     command: yarn start
+    env_file: ./.env

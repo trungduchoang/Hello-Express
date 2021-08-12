@@ -1,8 +1,8 @@
 FROM node:14.17.4-alpine
 
-RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
+RUN mkdir -p /usr/src/rx-backend-dev && chown -R node:node /usr/src/rx-backend-dev
 
-WORKDIR /usr/src/node-app
+WORKDIR /usr/src/rx-backend-dev
 
 COPY package.json yarn.lock ./
 
@@ -11,5 +11,3 @@ USER node
 RUN yarn install --pure-lockfile
 
 COPY --chown=node:node . .
-
-EXPOSE 3000
